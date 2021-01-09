@@ -5,6 +5,7 @@ services:
 
 before_install:
   - docker build -t OllieDarby/docker-react -f Dockerfile.dev .
+  - export YARN_GPG=no
 
 script:
   - docker run -e CI=true OliverDarby/docker-react npm run test
