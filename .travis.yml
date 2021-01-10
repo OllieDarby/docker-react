@@ -4,11 +4,11 @@ services:
   - docker
 
 before_install:
-  - docker build -t olliedarby/react-test -f Dockerfile.dev .
+  - docker build -t olliedarby/docker-react -f Dockerfile.dev .
   - export YARN_GPG=no
 
 script:
-  - docker run -e CI=true olliedarby/react-test npm run test
+  - docker run -e CI=true olliedarby/docker-react npm run test
 
 deploy:
   provider: elasticbeanstalk
